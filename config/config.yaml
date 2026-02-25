@@ -1,0 +1,10 @@
+samples:
+  - SRR15618897
+  - SRR15618896
+  - SRR15618895
+  - SRR15618890
+  - SRR15618889
+  - SRR15618888
+
+input_path: /opt/students/vytautas.rimas/raw_data_exercise_20260218
+

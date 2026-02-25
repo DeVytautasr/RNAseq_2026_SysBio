@@ -1,0 +1,16 @@
+configfile: "config/config.yaml"
+
+include: "rules/preprocess.smk"
+
+rule all:
+    input:
+        expand(
+            "results/fastqc/{sample}_{stage}_fastqc.html",
+            sample=config["samples"],
+            stage=["raw", "filtered"]
+        ),
+        expand(
+            "results/fastp/{sample}_fastp.html",
+            sample=config["samples"]
+        )
+

@@ -26,15 +26,11 @@ library(tibble)
 
 ## Load counts and samplesheet
 ```{r load-counts, include=TRUE}
-# input$counts gives .summary files; derive the actual count .txt paths
-summary_files <- snakemake@input$counts
-files <- gsub("\\.featureCounts\\.txt\\.summary$",
-              ".featureCounts.txt", summary_files)
-y <- readDGE(files, columns = c(1, 7), comment.char = "#")
-count_matrix <- y$counts
-# column names are full BAM paths; strip to sample ID
-colnames(count_matrix) <- gsub(".*/(SRR[0-9]+)\\.sorted\\.bam", "\\1",
-                                colnames(count_matrix))
+# Load teacher-provided count matrix and subset to our 6 samples
+count_matrix <- readRDS(snakemake@input$count_matrix)
+our_samples  <- snakemake@params$samples
+count_matrix <- count_matrix[, colnames(count_matrix) %in% our_samples]
+cat("Dimensions after subsetting:", dim(count_matrix), "\n")
 head(count_matrix)
 ```
 ```{r load-samplesheet, include=TRUE}

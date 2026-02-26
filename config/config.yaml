@@ -10,3 +10,4 @@ input_path: /opt/students/vytautas.rimas/raw_data_exercise_20260218
 genome_index_dir: /opt/shared/SYSBIO/Mus_musculus.GRCm39/genome
 gtf_file: /opt/shared/SYSBIO/Mus_musculus.GRCm39/genome.gtf
 samplesheet: "config/samplesheet.csv"
+count_matrix: "data/count_matrix.RDS"

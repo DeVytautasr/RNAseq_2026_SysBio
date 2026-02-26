@@ -1,12 +1,11 @@
 rule deg:
     input:
-        counts  = expand(
-            "results/counts/{sample}.featureCounts.txt.summary",
-            sample=config["samples"]
-        ),
-        samplesheet = config["samplesheet"]
+        count_matrix = "data/count_matrix.RDS",
+        samplesheet  = config["samplesheet"]
     output:
         "results/DEG/DEG_report.html"
+    params:
+        samples = config["samples"]
     conda:
         "../envs/deg.yaml"
     script:

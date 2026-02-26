@@ -1,9 +1,11 @@
 configfile: "config/config.yaml"
 
 include: "rules/preprocess.smk"
+include: "rules/alignment.smk"
 
 rule all:
     input:
+        # QC
         expand(
             "results/fastqc/{sample}_{stage}_fastqc.html",
             sample=config["samples"],
@@ -11,6 +13,11 @@ rule all:
         ),
         expand(
             "results/fastp/{sample}_fastp.html",
+            sample=config["samples"]
+        ),
+        # alignment outputs you want guaranteed
+        expand(
+            "results/hisat2/{sample}.sorted.bam.bai",
             sample=config["samples"]
         )
 

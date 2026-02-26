@@ -8,3 +8,4 @@ samples:
 
 input_path: /opt/students/vytautas.rimas/raw_data_exercise_20260218
 
+genome_index_dir: /opt/shared/SYSBIO/Mus_musculus.GRCm39/genome

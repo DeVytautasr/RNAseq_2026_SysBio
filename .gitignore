@@ -1,0 +1,12 @@
+# Snakemake outputs
+.snakemake/
+results/
+.raw_data_exercise_*/ 
+*.bam
+*.bai
+*.sam
+*.fastq
+*.html
+*.zip
+*.json
+

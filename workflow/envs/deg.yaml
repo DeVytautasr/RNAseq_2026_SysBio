@@ -19,5 +19,5 @@ dependencies:
   - bioconductor-biomart
   - bioconductor-annotationdbi
   - conda-forge::r-msigdbr
-  - conda-forge::r-fgsea
+  - bioconductor-fgsea
   - conda-forge::r-reshape2

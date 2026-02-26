@@ -3,6 +3,7 @@ include: "rules/preprocess.smk"
 include: "rules/alignment.smk"
 include: "rules/count.smk"
 include: "rules/multiqc.smk"
+include: "rules/deg.smk"
 
 rule all:
     input:
@@ -27,6 +28,8 @@ rule all:
             sample=config["samples"]
         ),
         # final MultiQC report
-        "results/multiqc/multiqc_report.html"
+        "results/multiqc/multiqc_report.html",
+        # DEG report
+        "results/DEG/DEG_report.html"
 
 
